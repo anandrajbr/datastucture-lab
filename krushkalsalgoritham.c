@@ -6,20 +6,17 @@
 
 int parent[MAX];
 
-// Initialize all parent values to 0
 void initialize(int n) {
     for (int i = 1; i <= n; i++)
         parent[i] = 0;
 }
 
-// Find function with path compression
 int find(int i) {
     while (parent[i] != 0)
         i = parent[i];
     return i;
 }
 
-// Union function
 int uni(int i, int j) {
     if (i != j) {
         parent[j] = i;
@@ -77,3 +74,4 @@ int main() {
     printf("\nMinimum cost of spanning tree = %d\n", sum_cost);
     return 0;
 }
+
