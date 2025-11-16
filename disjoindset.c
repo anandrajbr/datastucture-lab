@@ -22,7 +22,7 @@ int findSet(int x) {
         return -1;
     }
     if (parent[x] != x) {
-        parent[x] = findSet(parent[x]); // Path Compression
+        parent[x] = findSet(parent[x]); 
     }
     return parent[x];
 }
@@ -31,7 +31,7 @@ void unionSets(int x, int y) {
     int repX = findSet(x);
     int repY = findSet(y);
 
-    if (repX == -1 || repY == -1) return; // Fix: use logical OR (||)
+    if (repX == -1 || repY == -1) return;
 
     if (repX != repY) {
         if (rankArr[repX] > rankArr[repY]) {
@@ -112,4 +112,5 @@ int main() {
 
     return 0;
 } 
+
 
